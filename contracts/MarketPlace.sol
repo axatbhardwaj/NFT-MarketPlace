@@ -151,15 +151,15 @@ contract NFTMarketplace is Ownable, ReentrancyGuard {
         // Mark the listing as inactive
         listing.active = false;
 
+        // Transfer funds from the buyer to the seller
+        customToken.transferFrom(msg.sender, listing.seller, listing.price);
+
         // Transfer the NFT from the seller to the buyer
         nftContract.safeTransferFrom(
             listing.seller,
             msg.sender,
             listing.tokenId
         );
-
-        // Transfer funds from the buyer to the seller
-        customToken.transferFrom(msg.sender, listing.seller, listing.price);
 
         // Emit the NFTSold event
         emit NFTSold(_listingId, msg.sender, listing.price);

@@ -12,7 +12,7 @@ The three smart contracts in this repository are:
 
 ### Functionalities
 
-The marketplace supports the following functionalities:
+The marketplace supports the following functionalities:-
 
 1. **Buying NFTs:** Users can buy NFTs from listings by transferring the required amount of TRITokens to the marketplace contract. The marketplace contract will then transfer the NFT to the buyer.
 
